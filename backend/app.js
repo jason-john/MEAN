@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -14,6 +15,7 @@ mongoose.connect('mongodb+srv://jason:7sDhraDXBW1bKu1e@mycluster-htwsm.mongodb.n
     console.log('connection failed');
   })
 app.use(bodyParser.json());
+app.use('/images', express.static(path.join('backend/images')));
 
 //7sDhraDXBW1bKu1e
 
